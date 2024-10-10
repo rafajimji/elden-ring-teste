@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+    --branco:rgb(232, 230, 230);
+    --preto:rgb(19, 19, 19);
+    --azul:rgb(235, 18, 72);
+    --azul2:rgb(233, 22, 39);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: var(--azul);
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--azul);
+    color: var(--branco);
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 2em;
+    text-align: center;
+    z-index: 100;
+    opacity: 0; 
+    transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease, color 0.5s ease; 
+    transform: scaleX(1.5); 
+}
+
+#back-to-top.show {
+    opacity: 1;
+    transform: scaleX(1.5);
+}
+
+#back-to-top:hover {
+    background-color: var(--branco);
+    color: var(--azul);
+}
+
+header {
+    margin-top: 0;
+    position: fixed;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em 9%;
+    background-image: linear-gradient(to bottom, rgb(8, 8, 8), transparent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: all 0.3s ease; 
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    color: var(--branco);
+    scroll-behavior: smooth;
+    background-color: var(--preto);
+}
+
+.logo {
+    font-size: 4em;
+    color: var(--branco);
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.20);
+    color: var(--azul);
+}
+
+nav a {
+    font-size: 2em;
+    color: var(--branco);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    display: inline-block;
+    transform-origin: center;
+}
+
+nav a:hover {
+    color: var(--branco);
+    border-bottom: 3px solid var(--azul);
+    transform: scale(1.1);
+}
+
+section {
+    min-height: 80vh;
+    padding: 5rem 9%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: var(--preto);
+    flex-direction: row;
+}
+
+.home-img {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+.home-principal {
+    flex: 2;
+}
+
+.home .home-principal h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: var(--azul);
+}
+
+.home-principal p {
+    font-size: 2.3em;
+}
+
+.home-principal a {
+    font-size: 1em;
+    color: var(--azul);
+    text-decoration: none;
+    transition: text-decoration-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+}
+
+.home-principal a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--azul);
+    transform: scale(1.1);
+    font-size: 1.1em;
+}
+
+.home-img img {
+    padding: 5%;
+    width: 450px;
+    height: auto;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+}
+
+.home-img img:hover {
+    border-radius: 7%;
+    transform: scale(1.1);
+}
+
+.legenda {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.legenda h1 {
+    margin: 0;
+    color: var(--branco);
+    text-align: center;
+}
+
+.home-img:hover .legenda {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.home-principal h1 {
+    text-align: left;
+}
+
+
+.titulo {
+    font-size: 1.2em;
+    color: var(--branco);
+    border-radius: 10px;
+    background-color: var(--azul);
+    padding: 7px; 
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 48%;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; 
+    justify-content: center; 
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.cards h2 {
+    padding-top: 20px;
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--preto);
+}
+
+.card {
+    position: relative;
+    width: 300px; 
+    overflow: hidden;
+    background-color: var(--preto);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.288);
+    transition: transform 0.3s ease, height 0.3s ease;
+    margin-bottom: 2rem; /* Espaçamento entre os cards */
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    justify-content: center;
+    text-align: center;     
+    padding: 1rem;
+    color: var(--branco);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.87);
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.card:hover img {
+    transform: scale(0.9); 
+}
+
+.card:hover .card-content {
+    transform: translateY(0); 
+    opacity: 1; 
+    height: auto;
+}
+
+.card-content h3 {
+    text-align: center;
+    color: var(--azul);
+    font-size: 1.7em;
+}
+
+.card-content p {
+    font-size: 1.5em;
+}
+
+.card-content a {
+    font-size: 1.2em;
+    color: var(--branco);
+    border-radius: 10px;
+    background-color: var(--azul);
+    padding: 0.5em 1em; 
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1em; 
+}
+.card-content a:hover {
+text-decoration: underline;
+}
+
+.cards.armas,
+.cards.armaduras {
+    flex: 1;
+}
+
+/* Media para telas menores */
+@media (max-width: 980px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-img img {
+        padding-top: 50px;
+        width: 80%;
+        height: auto;
+    }
+
+    .home-principal h1 {
+        font-size: 4rem;
+    }
+
+    .home-principal p {
+        font-size: 2em;
+    }
+
+    .home-principal a {
+        font-size: 1.2em;
+    }
+}
+
+.cards {
+    display: flex;
+    gap: 2rem; 
+}
+
+.cards.armas,
+.cards.armaduras {
+    flex: 1;
+}
